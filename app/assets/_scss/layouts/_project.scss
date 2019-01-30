@@ -4,6 +4,7 @@
     @include if-min-width($tablet) {
         line-height: 400px;
     }
+
     margin: auto;
 }
 
@@ -17,7 +18,8 @@
     }
 
 
-    p, ul li {
+    p,
+    ul li {
         @include paragraph_text($tablet, to-max, 25px);
     }
 
@@ -29,6 +31,33 @@
         padding: 0 0.5rem;
     }
 
+    // .project-cta {
+
+    //     a {
+    //         @include cta-button();
+    //         padding: 0;
+    //         position: relative;
+    //         color: $pink;
+
+
+    //         &:hover {
+    //             color: $hover-grey;
+
+    //             span {
+    //                 transform: translateX(5px);
+    //                 transition: .2s;
+    //                 color: $hover-grey;
+    //             }
+    //         }
+
+    //         span {
+    //             position: absolute;
+    //             padding-left: 10px;
+    //             @include hover-effect();
+    //         }
+    //     }
+    // }
+
     .project-wrapper .project-detail {
 
         div {
@@ -38,49 +67,70 @@
         .project-detail__gallery {
             width: 100%;
             text-align: center;
-        
+
             img {
                 width: 100%;
                 margin: auto;
                 margin: calc(2.3em / 2) auto;
             }
+
             &:not([class*="grid"]) img:first-child {
-                @include if-min-width($tablet){
+                @include if-min-width($tablet) {
                     width: 70%;
                 }
             }
         }
-    
-       
-    
-        .skills__list {
-            @include flexbox();
-            @include flex-direction(column);
-            @include justify-content(space-between);
-            @include align-content(center);
 
-            @include if-min-width($tablet) {
-                @include flex-direction(row);
-            }
+
+
+        .skills__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             list-style-type: none;
             padding: 0;
-    
-            li {
-                @include flexbox();
-                @include if-min-width($desktop){
-                    border: 2px solid $hover-grey;
-                    width: 180px;
-                    height: 180px;
-                }
-                text-align: center;
 
-                span {
-                    margin: auto;
-                }
+            li {
+                font-family: $poppins;
+                margin: 1.25em auto;
+                font-size: 40px;
+                font-weight: $fw--4;
+                color: $pink;
             }
 
-            
+
         }
+
+        // .skills__list {
+
+        //     h2 {
+        //         @media (max-width: $tablet) {
+        //             text-align: center;
+        //         }
+        //     }
+
+        //     ul {
+        //         padding: .5em 0;
+
+        //         li {
+        //             //@include flexbox();
+        //             // @include if-min-width($desktop){
+        //             //     border: 2px solid $hover-grey;
+        //             //     width: 220px;
+        //             //     height: 220px;
+        //             // }
+        //             // text-align: center;
+        //             font-family: $poppins;
+        //             margin: 1.25em auto;
+        //             font-size: 40px;
+        //             font-weight: $fw--4;
+        //             color: $pink;
+
+        //             span {
+        //                 margin: auto;
+        //             }
+        //         }
+        //     }
+        // }
 
         .project-detail__img {
             @include supports-grid() {
@@ -94,7 +144,7 @@
                 @include if-min-width($tablet) {
                     @include flexbox();
                     @include flex-wrap(wrap);
-    
+
                     img {
                         flex: 2 1 50%;
                     }
@@ -106,55 +156,33 @@
                 width: 100%;
             }
         }
-    
-        .project-cta {
-            
-            a {
-                @include cta-button();
-                padding: 0;
-                position: relative;
-    
-    
-                &:hover {
-                    color: $hover-grey;
-    
-                    span {
-                        transform: translateX(5px);
-                        transition: .2s;
-                        color: $hover-grey;
-                    }
-                }
-    
-                span {
-                    position: absolute;
-                    padding-left: 10px;
-                    @include hover-effect();
-                }
-            }
-        }
+
 
     }
 
     .project-quote {
-        
+
         @include flexbox();
+
         @include if-min-width($tablet) {
             width: 60%;
             margin: auto;
         }
+
         position: relative;
         height: 200px;
-        
-        
 
-        &::before, &::after {
+
+
+        &::before,
+        &::after {
             content: "\201C";
             display: block;
             position: absolute;
             font-size: 60px;
             font-weight: bold;
         }
-        
+
         &::before {
             top: 0;
             left: 0;

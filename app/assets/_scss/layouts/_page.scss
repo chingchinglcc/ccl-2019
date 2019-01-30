@@ -6,7 +6,7 @@
         @include h1();
     }
 
-    h2{
+    h2 {
         @include h2();
     }
 }
@@ -35,7 +35,7 @@
     background-image: url('/assets/images/grid-paper-bg.jpg');
     height: 400px;
     width: 100%;
-    max-width: 1030px;
+    max-width: $max-width;
     margin: auto;
 
     h1.collection--title {
@@ -48,7 +48,7 @@
 
 .project-content {
     margin: calc(2.3em * 2) auto;
-    
+
 }
 
 .projects {
@@ -81,13 +81,14 @@
                 margin: 0 2.5%;
             }
 
-            @media screen and (min-width: $desktop){
+            @media screen and (min-width: $desktop) {
                 &:nth-child(3n) {
                     @supports (display: grid) {
                         grid-column: 1/-1;
                     }
                 }
             }
+
             margin-bottom: 2.3em;
 
 
@@ -95,7 +96,7 @@
                 .projects__img {
                     margin: 0;
                     padding: 0;
-                    
+
                     .featured_img {
                         width: 100%;
                         margin: 0;
@@ -104,7 +105,7 @@
                 }
 
                 &:hover {
-                    div > * {
+                    div>* {
                         color: $hover-grey;
                     }
                 }
@@ -129,11 +130,12 @@
 .contact--template {
 
     h2 {
-        @include body_text($abril, 700, 32px, $grey);
+        @include body_text($abril, 700, 48px, $grey);
     }
 
 
-    p, ul li {
+    p,
+    ul li {
         @include paragraph_text($tablet, to-max, 25px);
     }
 
@@ -159,7 +161,7 @@
             color: $hover-grey;
         }
     }
-   
+
     .contact_services {
 
         h2 {
@@ -169,23 +171,21 @@
         }
 
         ul {
-            @include flexbox();
-            @include flex-direction(column);
-            @include justify-content(space-between);
-            @include align-content(center);
-
-            @include if-min-width($tablet) {
-                @include flex-direction(row);
-            }
+            padding: .5em 0;
 
             li {
-                @include flexbox();
-                @include if-min-width($desktop){
-                    border: 2px solid $hover-grey;
-                    width: 220px;
-                    height: 220px;
-                }
-                text-align: center;
+                //@include flexbox();
+                // @include if-min-width($desktop){
+                //     border: 2px solid $hover-grey;
+                //     width: 220px;
+                //     height: 220px;
+                // }
+                // text-align: center;
+                font-family: $poppins;
+                margin: 1.25em auto;
+                font-size: 40px;
+                font-weight: $fw--4;
+                color: $pink;
 
                 span {
                     margin: auto;
@@ -195,8 +195,9 @@
     }
 
     .contact-quote {
-                
+
         @include flexbox();
+
         @include if-min-width($desktop) {
             width: 60%;
             margin: $section-margin;
@@ -204,16 +205,17 @@
 
         position: relative;
         height: 200px;
-        
 
-        &::before, &::after {
+
+        &::before,
+        &::after {
             content: "\201C";
             display: block;
             position: absolute;
             font-size: 60px;
             font-weight: bold;
         }
-        
+
         &::before {
             top: 0;
             left: 0;
