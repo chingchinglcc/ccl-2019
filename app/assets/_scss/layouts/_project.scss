@@ -31,32 +31,34 @@
         padding: 0 0.5rem;
     }
 
-    // .project-cta {
-
-    //     a {
-    //         @include cta-button();
-    //         padding: 0;
-    //         position: relative;
-    //         color: $pink;
 
 
-    //         &:hover {
-    //             color: $hover-grey;
+    .video-cta,
+    .project-cta {
+        @include paragraph_text($tablet, to-max, 25px);
+        position: relative;
 
-    //             span {
-    //                 transform: translateX(5px);
-    //                 transition: .2s;
-    //                 color: $hover-grey;
-    //             }
-    //         }
+        a {
 
-    //         span {
-    //             position: absolute;
-    //             padding-left: 10px;
-    //             @include hover-effect();
-    //         }
-    //     }
-    // }
+            position: relative;
+            padding: 0;
+
+            span i {
+                transition: .2s all ease;
+                transform: translateX(0);
+
+            }
+
+            &:hover {
+                span i {
+                    transform: translateX(10px);
+
+                }
+            }
+        }
+
+    }
+
 
     .project-wrapper .project-detail {
 
@@ -84,17 +86,47 @@
 
 
         .skills__list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            list-style-type: none;
-            padding: 0;
 
-            li {
-                font-family: $poppins;
+            width: 100%;
+            text-align: center;
+            position: relative;
+
+            @include respond-to-Lgmobile {
+                @include flexbox();
+                @include flex-direction(column);
+                padding: 0;
+            }
+
+            span {
+                font-family: $lato;
                 margin: 1.25em auto;
                 font-size: 40px;
-                font-weight: $fw--4;
-                color: $pink;
+                font-weight: $fw--1;
+                color: $light-grey;
+
+                @include respond-to-Lgmobile {
+                    margin: 0;
+                    font-size: 25px;
+                    text-align: left;
+                    padding: .25em 0;
+                }
+            }
+
+            .skills__list--item {
+                padding: 0 .25em;
+
+                @include respond-to-Lgmobile {
+                    padding: .35em 0;
+                    border-bottom: 2px solid $grey;
+
+                }
+            }
+
+
+            .skills__list--divider {
+                @include respond-to-Lgmobile {
+                    display: none;
+                }
             }
 
 

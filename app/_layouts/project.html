@@ -5,10 +5,13 @@ layout: default
   <div class="project-wrapper">
     <div class="project-detail">
       <div class="project-detail__text">
-        <p>{{ page.description }} <span class="project-cta"></span>
-          <a href="{{ page.video_url }}" alt="{{ page.video_title }}">Click It Out &nbsp;<span><i class="fas fa-arrow-right">
-                &nbsp;</i></span></a>
-          </span></p>
+        <p>{{ page.description }}
+          <span class="project-cta">
+            <a href="{{ page.live_demo }}" alt="{{ page.title }}"> Click It Out &nbsp;<span><i class="fas fa-arrow-right">
+                  &nbsp;</i></span>
+            </a>
+          </span>
+        </p>
 
       </div>
 
@@ -21,17 +24,23 @@ layout: default
       <div class="project-detail__skills">
         <h2 class="skills__title project__title">Tools I used to build this project:</h2>
 
-        <ul class="skills__list">
+        <div class="skills__list">
           {% for skill in page.tag %}
-          <li class="skills__list--item"><span>{{ skill }}</span></li>
+          <span class="skills__list--item">{{ skill }}</span><span class="skills__list--divider">|</span>
           {% endfor %}
-        </ul>
-
+        </div>
+        {{ content }}
       </div>
       <!-- <div class="project-cta">
           <a href="{{ page.live_demo }}" alt="{{ page.title }}">Live Demo<span><i class="fas fa-arrow-right"></i></span></a>
         </div> -->
       {% if page.video %}
+      <span class="project-cta video-cta">
+        <a href="{{ page.video_url }}" alt="{{ page.video_title }}">Video Interview &nbsp;<span><i class="fas fa-arrow-right">
+              &nbsp;</i></span></a>
+      </span>
+
+
       {% if page.extra_image %}
       <div class="project-detail__img">
         {% if page.image3 %}
@@ -64,8 +73,9 @@ layout: default
 
 
 
-  <div class="project-content">
+  <!-- <div class="project-content">
+   <h2 class="skills__title project__title">Tools I used to build this project:</h2>
     {{ content }}
-  </div>
+  </div> -->
 
 </div>

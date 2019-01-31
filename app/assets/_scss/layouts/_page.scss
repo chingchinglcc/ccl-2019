@@ -129,6 +129,7 @@
 
 .contact--template {
 
+
     h2 {
         @include body_text($abril, 700, 48px, $grey);
     }
@@ -163,33 +164,30 @@
     }
 
     .contact_services {
-
-        h2 {
-            @media (max-width: $tablet) {
-                text-align: center;
-            }
-        }
+        margin: 2.3em auto;
 
         ul {
             padding: .5em 0;
 
-            li {
-                //@include flexbox();
-                // @include if-min-width($desktop){
-                //     border: 2px solid $hover-grey;
-                //     width: 220px;
-                //     height: 220px;
-                // }
-                // text-align: center;
-                font-family: $poppins;
-                margin: 1.25em auto;
-                font-size: 40px;
-                font-weight: $fw--4;
-                color: $pink;
 
-                span {
-                    margin: auto;
+            li {
+
+                border-bottom: 2px solid $hover-grey;
+                padding: 1em 0 .7em;
+
+                .contact_services--title {
+                    font-family: $poppins;
+                    margin: 1.25em auto;
+                    font-size: 40px;
+                    font-weight: $fw--4;
+                    color: $pink;
                 }
+
+                .contact_services--intro {
+                    display: block;
+                    font-size: 24px;
+                }
+
             }
         }
     }

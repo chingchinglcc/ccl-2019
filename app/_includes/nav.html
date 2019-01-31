@@ -1,7 +1,9 @@
 <nav>
     <ul class="list">
         {% for item in site.docs %}
-            <li class=""><a href="{{ item.url }}">{{ item.title }}</a></li>
+        <li {% if page.url contains item.url %} class="activeLink" {% endif %}>
+            <a href="{{ item.url }}">{{item.title}}</a>
+        </li>
         {% endfor %}
     </ul>
 </nav>
